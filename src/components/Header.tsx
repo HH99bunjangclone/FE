@@ -40,10 +40,23 @@ function Header() {
         <IconContainer>
           <StLink to={'/item'}>
             <div>
-              <IconImg src="/assets/sell_icon.png" alt="sell_icon" />
-              <span style={{ fontSize: '14px', textAlign: 'center' }}>
-                판매하기
-              </span>
+              <div>
+              {localStorage.getItem('Authorization') ? (
+                <div>
+                  <IconImg src="/assets/sell_icon.png" alt="sell_icon" />
+                  <span style={{ fontSize: '14px', textAlign: 'center' }}>
+                    판매하기
+                  </span>
+                </div>
+              ) : (
+                <StLink to="/login">
+                  <div>
+                    <IconImg src="/assets/sell_icon.png" alt="sell_icon" />
+                    <span style={{ fontSize: '14px', textAlign: 'center' }}>판매하기</span>
+                  </div>
+                </StLink>
+              )}
+            </div>
             </div>
           </StLink>
           <div className="vertical"></div>

@@ -16,6 +16,7 @@ import { login } from '../apis/login';
 import { idCheck } from '../util/Id';
 import { useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
+// import withAuth from "../hocs/hoc";
 
 function Login() {
   const [id, setId] = useState('');
@@ -144,3 +145,4 @@ function Login() {
 }
 
 export default Login;
+// export default withAuth(Login, true);

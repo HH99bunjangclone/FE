@@ -14,6 +14,7 @@ import {
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router';
 import { createItem } from '../../apis/itemAPI';
+// import withAuth from '../../hocs/hoc';
 
 // post type
 export interface ItemData {
@@ -158,3 +159,4 @@ function ItemUpload() {
 }
 
 export default ItemUpload;
+// export default withAuth(ItemUpload, false);
