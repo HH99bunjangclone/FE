@@ -1,17 +1,27 @@
 import styled from 'styled-components';
+import chocolate from '../../public/assets/chocolate.jpeg'
 
 const MyProduct = () => {
   return (
+    <Wrapper>
+    <Category>
+      <CategoryName>
+        상품
+      </CategoryName>
+    </Category>
     <Card>
       <CardInner>
         <CardHead>
-          <Sth />
-          상품 &nbsp;
+          {/* <Sth /> */}
+          <img
+            src={chocolate}
+            alt="개사기급 무료나눔"
+          />
         </CardHead>
         <CardContents>
-          <ItemName>동결건조 마시멜로우</ItemName>
+          <ItemName><h2>내가 손해인 초콜릿 기프티콘 파라요~</h2></ItemName>
           <ItemContentBottom>
-            <Price>12,500</Price>
+            <Price>100,000</Price>
           </ItemContentBottom>
         </CardContents>
         <CardBot>
@@ -25,8 +35,33 @@ const MyProduct = () => {
         </CardBot>
       </CardInner>
     </Card>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+`;
+
+const Category = styled.div`
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+
+`;
+const CategoryName = styled.div`
+  width: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 16px;
+  font-size: 18px;
+`;
 
 const Card = styled.div`
   width: 194px;
@@ -37,6 +72,7 @@ const Card = styled.div`
     margin-right: 0;
   }
 `;
+
 const CardInner = styled.a`
   border: 1px solid rgb(238, 238, 238);
   background: rgb(255, 255, 255);
@@ -57,18 +93,27 @@ const CardHead = styled.div`
   }
 `;
 
-const Sth = styled.div``;
+// const Sth = styled.div``;
 const CardContents = styled.div`
-  padding: 15px 10px;
-  height: 50px;
+  padding: 15px 5px;
+  height: auto;
 `;
 const ItemName = styled.div`
+  width: 194px;
+  padding-right: 50px;
   position: relative;
   font-size: 14px;
   padding-bottom: 20px;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* word-break: break-all; */
+  overflow-wrap: break-word;
+  /* white-space: nowrap; */
   overflow: hidden;
+  h2 {
+    font-size: 14px;
+    margin: 0;
+    padding: 4px 12px 12px 12px;
+  }
 `;
 
 const ItemContentBottom = styled.div`
@@ -80,10 +125,11 @@ const ItemContentBottom = styled.div`
 
 const Price = styled.div`
   font-size: 16px;
-  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding: 4px 12px 0 12px;
+  font-weight: 700;
   &::after {
     content: '원';
     font-size: 12px;
@@ -91,21 +137,23 @@ const Price = styled.div`
   }
 `;
 const CardBot = styled.div`
+  width: 147px;
   height: 15px;
   border-top: 1px solid rgb(238, 238, 238);
   font-size: 12px;
   display: block;
-  padding: 14px 10px 14px 35px;
+  padding: 14px 10px 14px 40px;
   color: rgb(102, 102, 102);
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   position: relative;
+  margin: 0px;
   img {
     position: absolute;
     left: 10px;
     top: calc(50% - 8px);
+    padding-left: 10px;
   }
 `;
 export default MyProduct;
