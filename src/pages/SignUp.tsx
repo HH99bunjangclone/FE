@@ -27,6 +27,16 @@ import { nicknameCheck } from '../util/Nickname';
 import { useMutation } from '@tanstack/react-query';
 // import withAuth from "../hocs/hoc";
 
+interface CustomErrorData {
+  msg: string;
+}
+
+interface CustomAxiosError extends Error {
+  response?: {
+    data: CustomErrorData;
+  };
+}
+
 function SignUp() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -101,10 +111,9 @@ function SignUp() {
         navigate('/login');
       }
     },
-    onError: (error: AxiosError) => {
+    onError: (error: CustomAxiosError) => {
       // console.log(error, 'error');
-      // alert(`회원가입 실패 : ${error.response?.data.msg}`);
-      alert(error);
+      alert(`회원가입 실패 : ${error.response?.data.msg}`);
     },
   });
 
@@ -115,9 +124,8 @@ function SignUp() {
         alert('사용가능한 아이디(메일)입니다.');
       }
     },
-    onError: (error: AxiosError) => {
-      // alert(`회원가입 실패 : ${error.response?.data.msg}`);
-      alert(error);
+    onError: (error: CustomAxiosError) => {
+      alert(`회원가입 실패 : ${error.response?.data.msg}`);
     },
   });
   //데이터 바디 값으로 판단해야한다.
@@ -129,10 +137,9 @@ function SignUp() {
         alert('사용가능한 닉네임입니다.');
       }
     },
-    onError: (error: AxiosError) => {
+    onError: (error: CustomAxiosError) => {
       // 애시오스의 에러 객체에 리스폰스키가 있따!
-      // alert(`회원가입 실패 : ${error.response?.data.msg}`); //리스폰스가 반드시 오지 않을수 있으니 ? 쓰자 올때만 데이터에 접근할수 있똘고 처리 필요
-      alert(error);
+      alert(`회원가입 실패 : ${error.response?.data.msg}`); //리스폰스가 반드시 오지 않을수 있으니 ? 쓰자 올때만 데이터에 접근할수 있똘고 처리 필요
     },
   });
   //

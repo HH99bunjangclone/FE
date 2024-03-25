@@ -165,12 +165,7 @@ function ItemDetail() {
                   <img src="/assets/camera_icon.svg" alt="camera_icon" />
                   <span>이미지 등록</span>
                 </ImgLabel>
-                <input
-                  id="image_upload"
-                  type="file"
-                  multiple
-                  disabled
-                />
+                <input id="image_upload" type="file" multiple disabled />
               </div>
             </ImgBox>
             <Box>

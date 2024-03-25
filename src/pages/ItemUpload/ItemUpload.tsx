@@ -151,7 +151,7 @@ function ItemUpload() {
         </Box>
       </RegisterContainer>
       <Footer>
-        <button>나가기</button>
+        <button onClick={() => navigate('/')}>나가기</button>
         <button onClick={handleItemSubmit}>등록하기</button>
       </Footer>
     </div>
