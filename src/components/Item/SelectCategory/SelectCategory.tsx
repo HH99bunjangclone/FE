@@ -6,12 +6,10 @@ interface Option {
 }
 interface SelectCategoryProps {
   onCategoryChange: (selectedCategory: Option) => void;
-  // testCategory: string;
 }
 
 function SelectCategory({
   onCategoryChange,
-  // testCategory,
 }: SelectCategoryProps) {
   // 카테고리 셀렉트 옵션들
   const options: Option[] = [
@@ -25,9 +23,6 @@ function SelectCategory({
     { value: 'FOODS', label: '식품' },
   ];
 
-  // const selectedLabel = options.find(
-  //   (option) => option.value === testCategory,
-  // )?.label;
   const handleCategoryClick = (selectedCategory: Option) => {
     onCategoryChange(selectedCategory);
   };
@@ -42,7 +37,6 @@ function SelectCategory({
               onClick={() => handleCategoryClick(item)}
             >
               {item.label}
-              {/* {item.value === testCategory ? selectedLabel : item.label} */}
             </OptionList>
           ))}
         </ul>

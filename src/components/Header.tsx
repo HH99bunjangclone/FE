@@ -13,7 +13,6 @@ import {
 import SearchField from './Item/SearchField/SearchField';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-// import { useQuery } from '@tanstack/react-query';
 
 function Header() {
   const navigate = useNavigate();
@@ -27,12 +26,6 @@ function Header() {
     localStorage.removeItem('Authorization');
     navigate('/');
   };
-
-  // const { data: profile } = useQuery('myInfo', getMyInfo);
-
-  // const onClickMyProfile = () => {
-  //   setIsActiveModal((prev) => !prev);
-  // };
 
   return (
     <HeadContainer>

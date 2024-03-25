@@ -10,7 +10,6 @@ export const signUp = async (user: SignUpUser) => {
     });
     return result;
   } catch (error) {
-    // alert(error.response.data.message);
     throw error
   }
 };
@@ -21,7 +20,6 @@ export const duplicateNicknameCheck = async (user: SignUpUser) => {
     return result;
   } catch (error) {
     throw error
-    // alert(error.response.data.message);
   }
 };
 
@@ -30,7 +28,6 @@ export const duplicateIdCheck = async (user: SignUpUser) => {
     const result = await instance.get(`/user/email/check?email=${user.id}`);
     return result;
   } catch (error) {
-    // alert(error.response.data.message);
     throw error
   }
 };
