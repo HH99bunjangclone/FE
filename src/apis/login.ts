@@ -14,7 +14,6 @@ export const login = async (user: LoginUser) => {
     console.log('result', result);
     return result;
   } catch (error) {
-    // console.log(error.result);
     throw error;
   }
 };

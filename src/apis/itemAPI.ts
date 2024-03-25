@@ -1,5 +1,3 @@
-// import { error } from "console";
-
 import { ItemDataRes } from '../pages/ItemDetail/ItemDetail';
 import { authInstance, instance } from './axios';
 
@@ -65,26 +63,11 @@ export const removeItemPost = async (itemId: number) => {
   }
 };
 
-
-export const searchItems =  async (title: string) => {
+export const searchItems = async (title: string) => {
   try {
     const result = await instance.get(`/item/search?title=${title}`);
     return result;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
-
-
-// export const userVoteOption = async (item) => { // 상세페이지에서 원가를 클릭했을 때
-//   try {
-//     const res = await authInstance.post(`/vote/${item.id}`, {
-//       optionId: item.optionId,
-//     });
-//     return res.data.message;
-//   } catch (error) {
-//     // console.log(error.response.data.message);
-//     // alert(error.response.data.message);
-//     return error.response.data.message;
-//   }
-// };
+};

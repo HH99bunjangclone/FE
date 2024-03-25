@@ -10,7 +10,6 @@ import store_icon from '../../../public/assets/store_icon.svg';
 import Header from '../../components/Header';
 import star_icon from '../../../public/assets/star_icon.svg';
 import { useNavigate } from 'react-router-dom';
-
 function MyPage() {
   const navigate = useNavigate();
   const { data, isLoading, isError } = useQuery({
@@ -19,7 +18,6 @@ function MyPage() {
   });
   const createdAt = new Date(data?.data.createdAt);
   const daysDifference = checkDate(createdAt);
-
   if (isLoading) {
     return <div>로딩 중...</div>;
   }
@@ -46,7 +44,6 @@ function MyPage() {
       </div>
     );
   }
-
   return (
     <>
       <Header />
@@ -92,7 +89,12 @@ function MyPage() {
               <span>내 아이디:{data?.data.email}</span>
             </MyId>
             <HiHello>
-              애드라 택포 네고 안받는다. 그리고 나한테 사기치려는 생각 하덜덜 말어라~
+              <div>
+                애드라 택포 네고 안받는다. 그리고 나한테 사기치려는 생각 하덜덜
+                말어라~
+                <br />
+                와치 와치 시계는 와치
+              </div>
               <NicknameBtt>소개글 수정</NicknameBtt>
             </HiHello>
           </TextWindow>
@@ -104,9 +106,7 @@ function MyPage() {
     </>
   );
 }
-
 export default MyPage;
-
 const ImgBtt = styled.div`
   margin-top: 10px;
   display: flex;
@@ -114,8 +114,9 @@ const ImgBtt = styled.div`
 const HiHello = styled.div`
   margin-top: 10px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 `;
-
 const ProfileButton = styled.div`
   button {
     width: 106px;
@@ -130,7 +131,6 @@ const ProfileButton = styled.div`
   bottom: 270px;
   left: 110px;
 `;
-
 const Wrapper = styled.div`
   width: 1024px;
   margin: auto;
@@ -138,7 +138,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-
 const Container = styled.div`
   width: 1024px;
   margin: auto;
@@ -147,7 +146,6 @@ const Container = styled.div`
   margin-bottom: 30px;
   border: 1px solid rgb(238, 238, 238);
 `;
-
 const Profile = styled.div`
   width: 295px;
   height: 295px;
@@ -162,17 +160,25 @@ const Section = styled.div`
   margin: 0px;
   height: 310px;
 `;
-
 const MyId = styled.div`
   font-size: 13px;
-  gap: px;
+  width: 665px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 5px;
 `;
-
 const StoreOpen = styled.div`
   font-size: 13px;
-  gap: 10px;
+  font-size: 13px;
+  width: 665px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #eeeeee;
+  padding-top: 5px;
 `;
-
 const ProfileBackground = styled.div`
   img {
     /* width: 310px; */
@@ -198,7 +204,6 @@ const ProfileBackground = styled.div`
   top: 3px;
   left: 3px;
 `;
-
 const Picture = styled.div`
   img {
     /* border-radius: 100%; */
@@ -219,17 +224,16 @@ const Picture = styled.div`
     left: 110px;
   }
 `;
-
 const TextWindow = styled.div`
   margin-left: 10px;
   padding: 25px;
   flex-wrap: nowrap;
+  gap: 0px;
   img {
     width: 14px;
     height: 13px;
   }
 `;
-
 const Nickname = styled.div`
   display: flex;
   -webkit-box-align: center;
@@ -238,7 +242,6 @@ const Nickname = styled.div`
   font-size: 18px;
   gap: 10px;
 `;
-
 const NicknameBtt = styled.button`
   height: 20px;
   display: flex;
@@ -250,7 +253,6 @@ const NicknameBtt = styled.button`
   border-radius: 0px;
   font-size: 11px;
 `;
-
 const ImageStyle = styled.img`
   height: 15px;
 `;

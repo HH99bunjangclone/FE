@@ -60,9 +60,6 @@ export const MenuContainer = styled.header`
   img {
     margin-right: 10px;
   }
-  /* img svg:hover {
-    fill: red;
-  } */
 
   span {
     font-weight: 800;

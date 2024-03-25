@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Box1 = styled.div`
-  /* min-height: 60px; */
   width: 284px;
   height: 302px;
   overflow-y: auto;
