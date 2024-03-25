@@ -42,9 +42,9 @@ function MyPage() {
                 />
               </Picture>
               <ProfileButton>
-              {data?.data.nickname}
-              <img src={favorites}/>
-              {/* 별 누끼 어케할거냐고 물어보기 */}
+                <ImgBtt>{data?.data.nickname}</ImgBtt>
+                <img src={favorites} />
+                {/* 별 누끼 어케할거냐고 물어보기 채리씨 나래씨가 아이콘 쓰라고 추천해주심 */}
                 <button>&nbsp;내 상점 관리</button>
               </ProfileButton>
             </Profile>
@@ -70,6 +70,7 @@ export default MyPage;
 
 const ImgBtt = styled.div`
   margin-top: 10px;
+  display: flex;
 `;
 
 const ProfileButton = styled.div`
@@ -83,9 +84,8 @@ const ProfileButton = styled.div`
     background-color: transparent;
   }
   position: relative;
-  bottom: 300px;
-  left: 140px;
-  
+  bottom: 270px;
+  left: 110px;
 `;
 
 const Wrapper = styled.div`
@@ -105,7 +105,15 @@ const Container = styled.div`
   border: 1px solid rgb(238, 238, 238);
 `;
 
-const Profile = styled.div``;
+const Profile = styled.div`
+  width: 330px;
+  height: 330px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 3px;
+  left: 1px;
+`;
 
 const Section = styled.div`
   padding: 0px;
@@ -152,8 +160,8 @@ const Picture = styled.div`
     aspect-ratio: auto 100 / 100;
     height: 100px;
     position: relative;
-    bottom: 300px;
-    left: 140px;
+    bottom: 250px;
+    left: 110px;
   }
 `;
 

@@ -25,3 +25,4 @@ export interface LoginUser {
     id: string,
     pw: string
 }
+

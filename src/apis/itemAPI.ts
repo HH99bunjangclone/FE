@@ -1,4 +1,5 @@
 // import { error } from "console";
+
 import { ItemDataRes } from '../pages/ItemDetail/ItemDetail';
 import { authInstance, instance } from './axios';
 
@@ -30,7 +31,6 @@ export const createItem = async (newItem: any) => {
 };
 
 export const detailItemGet = async (itemId: number) => {
-  // 선택한 상품 게시글 정보 조회
   try {
     const { data } = await instance.get(`/item/${itemId}`);
     return data;
@@ -64,6 +64,17 @@ export const removeItemPost = async (itemId: number) => {
     throw error;
   }
 };
+
+
+export const searchItems =  async (title: string) => {
+  try {
+    const result = await instance.get(`/item/search?title=${title}`);
+    return result;
+  } catch (error) {
+    throw error
+  }
+}
+
 
 // export const userVoteOption = async (item) => { // 상세페이지에서 원가를 클릭했을 때
 //   try {
