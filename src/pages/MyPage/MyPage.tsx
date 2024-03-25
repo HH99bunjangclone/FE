@@ -6,10 +6,10 @@ import MyProduct from '../../components/Myproduct';
 import watch from '../../../public/assets/watch.jpeg';
 import kawaiisally from '../../../public/assets/kawaiisally.jpeg';
 import emojione_ship from '../../../public/assets/emojione_ship.svg';
-import store_icon from '../../../public/assets/store_icon.svg';
 import Header from '../../components/Header';
 import star_icon from '../../../public/assets/star_icon.svg';
 import { useNavigate } from 'react-router-dom';
+
 function MyPage() {
   const navigate = useNavigate();
   const { data, isLoading, isError } = useQuery({
@@ -18,6 +18,7 @@ function MyPage() {
   });
   const createdAt = new Date(data?.data.createdAt);
   const daysDifference = checkDate(createdAt);
+
   if (isLoading) {
     return <div>로딩 중...</div>;
   }
@@ -44,6 +45,7 @@ function MyPage() {
       </div>
     );
   }
+
   return (
     <>
       <Header />
@@ -78,23 +80,20 @@ function MyPage() {
               {data?.data.nickname}
               <NicknameBtt>상점명 수정</NicknameBtt>
             </Nickname>
-            <StoreOpen>
-              <img src="https://m.bunjang.co.kr/pc-static/resource/4b323fe1ef79c2b715fe.png" />
-              &nbsp;
-              <span>상점오픈일:{daysDifference}</span>
-            </StoreOpen>
-            <MyId>
-              <img src="https://m.bunjang.co.kr/pc-static/resource/e6792c64a6ba6f2b10a2.png" />
-              &nbsp;
-              <span>내 아이디:{data?.data.email}</span>
-            </MyId>
+            <MyInfo>
+              <StoreOpen>
+                <img src="https://m.bunjang.co.kr/pc-static/resource/4b323fe1ef79c2b715fe.png" />
+                &nbsp;
+                <span>상점오픈일:&nbsp;{daysDifference}</span>
+              </StoreOpen>
+              <MyId>
+                <img src="https://m.bunjang.co.kr/pc-static/resource/e6792c64a6ba6f2b10a2.png" />
+                &nbsp;
+                <span>내 아이디:&nbsp;{data?.data.email}</span>
+              </MyId>
+            </MyInfo>
             <HiHello>
-              <div>
-                애드라 택포 네고 안받는다. 그리고 나한테 사기치려는 생각 하덜덜
-                말어라~
-                <br />
-                와치 와치 시계는 와치
-              </div>
+              <div>애드라 택포 네고 안받는다. 그리고 나한테 사기치려는 생각 하덜덜 말어라~<br/>와치 와치 시계는 와치</div>
               <NicknameBtt>소개글 수정</NicknameBtt>
             </HiHello>
           </TextWindow>
@@ -106,7 +105,9 @@ function MyPage() {
     </>
   );
 }
+
 export default MyPage;
+
 const ImgBtt = styled.div`
   margin-top: 10px;
   display: flex;
@@ -115,8 +116,9 @@ const HiHello = styled.div`
   margin-top: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
+
 const ProfileButton = styled.div`
   button {
     width: 106px;
@@ -131,6 +133,7 @@ const ProfileButton = styled.div`
   bottom: 270px;
   left: 110px;
 `;
+
 const Wrapper = styled.div`
   width: 1024px;
   margin: auto;
@@ -138,6 +141,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const Container = styled.div`
   width: 1024px;
   margin: auto;
@@ -146,6 +150,7 @@ const Container = styled.div`
   margin-bottom: 30px;
   border: 1px solid rgb(238, 238, 238);
 `;
+
 const Profile = styled.div`
   width: 295px;
   height: 295px;
@@ -160,15 +165,26 @@ const Section = styled.div`
   margin: 0px;
   height: 310px;
 `;
-const MyId = styled.div`
+
+const MyInfo = styled.div`
   font-size: 13px;
   width: 665px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
   padding-bottom: 5px;
 `;
+const MyId = styled.div`
+  font-size: 13px;
+  width: 665px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 5px;
+`;
+
 const StoreOpen = styled.div`
   font-size: 13px;
   font-size: 13px;
@@ -176,9 +192,9 @@ const StoreOpen = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid #eeeeee;
   padding-top: 5px;
 `;
+
 const ProfileBackground = styled.div`
   img {
     /* width: 310px; */
@@ -204,6 +220,7 @@ const ProfileBackground = styled.div`
   top: 3px;
   left: 3px;
 `;
+
 const Picture = styled.div`
   img {
     /* border-radius: 100%; */
@@ -224,6 +241,7 @@ const Picture = styled.div`
     left: 110px;
   }
 `;
+
 const TextWindow = styled.div`
   margin-left: 10px;
   padding: 25px;
@@ -234,6 +252,7 @@ const TextWindow = styled.div`
     height: 13px;
   }
 `;
+
 const Nickname = styled.div`
   display: flex;
   -webkit-box-align: center;
@@ -242,6 +261,7 @@ const Nickname = styled.div`
   font-size: 18px;
   gap: 10px;
 `;
+
 const NicknameBtt = styled.button`
   height: 20px;
   display: flex;
@@ -253,6 +273,7 @@ const NicknameBtt = styled.button`
   border-radius: 0px;
   font-size: 11px;
 `;
+
 const ImageStyle = styled.img`
   height: 15px;
 `;
@@ -264,3 +285,4 @@ const ImageStyleButton = styled.img`
   justify-content: center;
   align-items: center;
 `;
+
