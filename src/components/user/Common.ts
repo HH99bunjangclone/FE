@@ -119,7 +119,7 @@ export const CustomLink = styled(Link)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0px 5px 0px 5px; 
+  margin: 0px 2px 0px 2px; 
   &:visited {
     width: 50%;
     border: none;

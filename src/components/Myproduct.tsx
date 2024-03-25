@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const MyProduct = () => {
   return (
@@ -6,6 +6,7 @@ const MyProduct = () => {
       <CardInner>
         <CardHead>
           <Sth />
+          상품 &nbsp;
         </CardHead>
         <CardContents>
           <ItemName>동결건조 마시멜로우</ItemName>
@@ -84,7 +85,7 @@ const Price = styled.div`
   white-space: nowrap;
   overflow: hidden;
   &::after {
-    content: "원";
+    content: '원';
     font-size: 12px;
     margin-left: 3px;
   }

@@ -75,3 +75,13 @@ export const StLink = styled(Link)`
     color: unset;
   }
 `;
+
+export const CustomLink = styled(Link)`
+  margin-top: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  &:visited {
+    color: black;
+  }
+`;
