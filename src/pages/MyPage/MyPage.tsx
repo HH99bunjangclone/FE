@@ -9,6 +9,7 @@ import emojione_ship from '../../../public/assets/emojione_ship.svg';
 import Header from '../../components/Header';
 import star_icon from '../../../public/assets/star_icon.svg';
 import { useNavigate } from 'react-router-dom';
+// import withAuth from '../../hocs/hoc';
 
 function MyPage() {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ function MyPage() {
 }
 
 export default MyPage;
+// export default withAuth(MyPage, false);
 
 const ImgBtt = styled.div`
   margin-top: 10px;

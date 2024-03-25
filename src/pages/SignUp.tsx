@@ -19,12 +19,13 @@ import {
   signUp,
   duplicateNicknameCheck,
   duplicateIdCheck,
-} from '../apis/signUp'; // 이렇게 임포트 하는 것처럼 에러타입을 입포트 할수 있다 에시오스에서제공하는 에시오스타입에러가 필요
+} from '../apis/signUp'; // 이렇게 임포트 하는 것처럼 에러타입을 아래와 같이 import 할수 있다. axios에서 제공하는 axios type error가 필요
 import { AxiosError } from 'axios';
 import { idCheck } from '../util/Id';
 import { passwordCheck } from '../util/Password';
 import { nicknameCheck } from '../util/Nickname';
 import { useMutation } from '@tanstack/react-query';
+// import withAuth from "../hocs/hoc";
 
 function SignUp() {
   const [id, setId] = useState('');
