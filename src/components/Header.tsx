@@ -11,7 +11,7 @@ import {
   CustomLink,
 } from './styles';
 import SearchField from './Item/SearchField/SearchField';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // import { useQuery } from '@tanstack/react-query';
 
@@ -48,13 +48,17 @@ function Header() {
           <StLink to={'/item'}>
             <div>
               <IconImg src="/assets/sell_icon.png" alt="sell_icon" />
-              <span style={{ fontSize:'14px', textAlign:'center' }}>판매하기</span>
+              <span style={{ fontSize: '14px', textAlign: 'center' }}>
+                판매하기
+              </span>
             </div>
           </StLink>
           <div className="vertical"></div>
           <StLink to={'/user/mypage'}>
-            <IconImg src="/assets/myStore_icon.png" alt="myStore_icon" />
-            <span style={{ fontSize:'14px' }}>내상점</span>
+            <div>
+              <IconImg src="/assets/myStore_icon.png" alt="myStore_icon" />
+              <span style={{ fontSize: '14px' }}>내상점</span>
+            </div>
           </StLink>
           <div className="vertical"></div>
           <div>
@@ -63,12 +67,27 @@ function Header() {
               alt="thunderTalk_icon"
             />
             <div>
-            {localStorage.getItem('Authorization') ? (
+              {localStorage.getItem('Authorization') ? (
                 <>
-                  <button onClick={onClickLogoutHandler} style={{ backgroundColor:"white", color:"black", border:"none", padding:"0px", fontSize:'14px' }}>로그아웃</button>
+                  <button
+                    onClick={onClickLogoutHandler}
+                    style={{
+                      backgroundColor: 'white',
+                      color: 'black',
+                      border: 'none',
+                      padding: '0px',
+                      fontSize: '14px',
+                    }}
+                  >
+                    로그아웃
+                  </button>
                 </>
               ) : (
-                <Link to="/login" style={{ color:"black", textDecoration: "none", fontSize:'14px' }}>로그인/회원가입</Link>
+                <StLink to="/login">
+                  <div>
+                    <span>로그인/회원가입</span>
+                  </div>
+                </StLink>
               )}
             </div>
           </div>
