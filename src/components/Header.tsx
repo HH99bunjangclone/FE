@@ -48,13 +48,13 @@ function Header() {
           <StLink to={'/item'}>
             <div>
               <IconImg src="/assets/sell_icon.png" alt="sell_icon" />
-              <span>판매하기</span>
+              <span style={{ fontSize:'14px', textAlign:'center' }}>판매하기</span>
             </div>
           </StLink>
           <div className="vertical"></div>
           <StLink to={'/user/mypage'}>
             <IconImg src="/assets/myStore_icon.png" alt="myStore_icon" />
-            <span>내상점</span>
+            <span style={{ fontSize:'14px' }}>내상점</span>
           </StLink>
           <div className="vertical"></div>
           <div>
@@ -63,27 +63,12 @@ function Header() {
               alt="thunderTalk_icon"
             />
             <div>
-              {localStorage.getItem('Authorization') ? ( // 문자열이 지금 상태에서 빈무ㄴ자열로 오기때문에  위에 콘솔 찍어서 어떤게 오는지 보기
+            {localStorage.getItem('Authorization') ? (
                 <>
-                  <button
-                    onClick={onClickLogoutHandler}
-                    style={{
-                      backgroundColor: 'white',
-                      color: 'black',
-                      border: 'none',
-                      padding: '0px',
-                    }}
-                  >
-                    로그아웃
-                  </button>
+                  <button onClick={onClickLogoutHandler} style={{ backgroundColor:"white", color:"black", border:"none", padding:"0px", fontSize:'14px' }}>로그아웃</button>
                 </>
               ) : (
-                <Link
-                  to="/login"
-                  style={{ color: 'black', textDecoration: 'none' }}
-                >
-                  로그인
-                </Link>
+                <Link to="/login" style={{ color:"black", textDecoration: "none", fontSize:'14px' }}>로그인/회원가입</Link>
               )}
             </div>
           </div>
